@@ -2,12 +2,54 @@
 
 Este é um projeto de uma aplicação Web em Go para uma loja virtual simples, utilizando MySQL como banco de dados e HTML com Bootstrap para as interfaces.
 
-## Requisitos
+## Funcionalidades
 
-- Go 1.16 ou superior
+- Listar produtos
+- Adicionar novo produto
+- Editar produto existente
+- Excluir produto
+
+## Tecnologias Utilizadas
+
+- Go
 - MySQL
+- HTML
+- Bootstrap
 
-## Instalação
+## Pré-requisitos
+
+- [Go](https://golang.org/doc/install) instalado
+- [MySQL](https://dev.mysql.com/downloads/mysql/) instalado e configurado
+
+## Configuração do Banco de Dados (MySQL)
+
+Para configurar o banco de dados, você precisará criar o database `db_loja_golang` e a tabela `tbl_produtos` utilizando os seguintes comandos SQL dentro do MySQL:
+
+### Criação do Database
+
+```sql
+CREATE DATABASE db_loja_golang;
+```
+
+### Acesso ao Database criado
+
+```sql
+USE db_loja_golang;
+```
+
+### Criação da Tabela
+
+```sql
+CREATE TABLE tbl_produtos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    descricao VARCHAR(255),
+    preco DOUBLE,
+    quantidade INT
+);
+```
+
+## Como executar
 
 1. Clone o repositório:
 
@@ -28,20 +70,17 @@ Este é um projeto de uma aplicação Web em Go para uma loja virtual simples, u
     export MYSQL_PASSWORD=sua_senha_mysql
     ```
 
-4. Execute a aplicação:
+4. Volte na aplicação e execute ela:
 
     ```bash
     go run main.go
     ```
 
-5. Acesse a aplicação em ***<http://localhost:8000>***.
+5. Acesse a aplicação atraves do seu navegador no seguinte endereço: **<http://localhost:8000>**.
 
-## Funcionalidades
+## Imagem da aplicação
 
-- Listagem de produtos
-- Adição de novos produtos
-- Edição de produtos existentes
-- Exclusão de produtos
+![imagem principal da aplicação](image.png)
 
 ## Estrutura do Projeto
 
